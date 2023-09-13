@@ -1,0 +1,24 @@
+/* Estilos para el contenedor de la cuadrícula */
+#grid-container {
+    display: grid;
+    grid-template-columns: repeat(20, 30px); /* 20 columnas de 30px cada una */
+    /*grid-gap: 2px; /* Espacio entre las celdas */
+    margin-top: 20px; /* Margen superior para separar del botón */
+}
+
+/* Estilos para las celdas de la cuadrícula */
+.grid-cell {
+    width: 30px;
+    height: 30px;
+    background-color: lightgray;
+    border: 1px solid gray;
+    text-align: center; /* Alineación del texto al centro */
+    line-height: 30px; /* Altura de línea igual al alto de la celda para centrar verticalmente */
+}
+
+/* Estilos para resaltar celdas cuando se pasa el cursor por encima */
+.grid-cell:hover {
+    background-color: rgb(193, 30, 30);
+    color: white;
+    cursor: pointer; /* Cambia el cursor al pasar por encima */
+}
