@@ -13,23 +13,24 @@ function generarCuadricula(){
             celda.className="grid-cell"
             //se agrega la celda al contenedor
             gridContainer.appendChild(celda)
-            //agregar evento de click
+             //agregar evento de click
             celda.addEventListener("click",function(){
-                const clicCoordenadas = [i, j];
                 let esMina = false;
                 
                 // Verificar si las coordenadas del clic coinciden con alguna mina
                 for (const coordenada of minas) {
                     if (coordenada[0] === i && coordenada[1] === j) {
                         esMina = true;
+                        celda.classList.add("mina")
                         alert("Descubriste una mina")
                         break; // Salir del bucle una vez que se encuentre una mina
                     }
                 }
-                
                 if (esMina) {
+                    celda.classList.add("mina")
                     console.log("Clic en la mina (" + i + ", " + j + ")");
                 } else {
+                    celda.classList.add("celda-sin-mina")
                     console.log("Clic en la celda (" + i + ", " + j + ")");
                 }
             });
@@ -59,5 +60,6 @@ function generarMinas(){
     return coordenasMinas
 }
 function mostrarMinas(){
+    
     return minas
 }

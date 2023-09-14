@@ -18,7 +18,17 @@
 
 /* Estilos para resaltar celdas cuando se pasa el cursor por encima */
 .grid-cell:hover {
-    background-color: rgb(193, 30, 30);
+    background-color: rgb(44, 44, 44);
     color: white;
     cursor: pointer; /* Cambia el cursor al pasar por encima */
+}
+.mina {
+    background-color: red; /* Cambia el color de fondo a rojo para mostrar la mina */
+    color: white; /* Cambia el color del texto a blanco para hacerlo más visible */
+    /* Puedes agregar otros estilos según tus preferencias */
+}
+.celda-sin-mina {
+    background-color: rgb(35, 227, 89); 
+    color: white; /* Cambia el color del texto a blanco para hacerlo más visible */
+    /* Puedes agregar otros estilos según tus preferencias */
 }
