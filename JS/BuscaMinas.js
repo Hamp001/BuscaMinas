@@ -4,7 +4,7 @@ const numeroMinas=20
 let minas=[]
 
 function generarCuadricula(){
-    const gridContainer=document.getElementById("grid-container")
+    gridContainer=document.getElementById("grid-container")
     minas=generarMinas()
     for(let i=0;i<filas;i++){
         for(let j=0;j<columnas;j++){
@@ -28,6 +28,7 @@ function generarCuadricula(){
                 }
                 if (esMina) {
                     celda.classList.add("mina")
+                    mostrarMinas()
                     console.log("Clic en la mina (" + i + ", " + j + ")");
                 } else {
                     celda.classList.add("celda-sin-mina")
@@ -38,6 +39,7 @@ function generarCuadricula(){
         }
     }
 }
+
 function numeroRandom(min,max){
     return Math.floor(Math.random()*(max-min+1)+min)
 }
@@ -59,7 +61,20 @@ function generarMinas(){
     }
     return coordenasMinas
 }
-function mostrarMinas(){
-    
+function mostrarMinas() {
+    // Obtener el contenedor de la cuadrícula y todas las celdas
+    const gridContainer = document.getElementById("grid-container");
+    const celdas = gridContainer.getElementsByClassName("grid-cell");
+
+    // Iterar a través de las coordenadas de las minas
+    for (const coordenada of minas) {
+        const [i, j] = coordenada; // Descomponer las coordenadas en i y j
+        const indice = i * columnas + j; // Calcular el índice en el arreglo unidimensional
+        const celda = celdas[indice]; // Seleccionar la celda correspondiente
+        celda.classList.add("mina"); // Agregar la clase "mina" a la celda
+    }
+}
+
+function getCoordenadasMinas(){
     return minas
 }

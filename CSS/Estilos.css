@@ -4,6 +4,20 @@
     grid-template-columns: repeat(20, 30px); /* 20 columnas de 30px cada una */
     /*grid-gap: 2px; /* Espacio entre las celdas */
     margin-top: 20px; /* Margen superior para separar del botón */
+    
+    
+}
+form{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    height: auto;
+    transform: translate(-50%, -50%);
+    padding: 20px; /* Agrega espacio alrededor del formulario */
+}
+h1{
+    margin-top: 50px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 /* Estilos para las celdas de la cuadrícula */
