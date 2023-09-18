@@ -31,6 +31,7 @@ function generarCuadricula(){
                     mostrarMinas()
                     console.log("Clic en la mina (" + i + ", " + j + ")");
                 } else {
+                    celda.textContent=contarMinasCircundantes(i,j)
                     celda.classList.add("celda-sin-mina")
                     console.log("Clic en la celda (" + i + ", " + j + ")");
                 }
@@ -74,7 +75,32 @@ function mostrarMinas() {
         celda.classList.add("mina"); // Agregar la clase "mina" a la celda
     }
 }
+function contarMinasCircundantes(i,j){
+    let MinasCont=0
+    //tenemos que verificar si las 8 celdas de alrededor tienen minas
+    /*
+        [3,4][3,5][3,6]
+        [4,4][4,5][4,6]
+        [5,4][5,5][5,6]        
+    */
+    console.log(minas)
+    for(x=i-1;x<=i+1;x++){
+        for(y=j-1;y<=j+1;y++){
+            console.log("[ "+x+" , "+y+" ]")
+            /*
+                minas.some() verificca si al menos un elemento cumple con la condicion porque 
+                minas.includes() no compara arrays anidados 
+                some espera como argumento una funcion
+                funcion lambda para verificar 
+            */
+            if(minas.some(coordenada => coordenada[0] === x && coordenada[1] === y)){
+                MinasCont++
+            }
+        }
+    }
 
+    return MinasCont
+}
 function getCoordenadasMinas(){
     return minas
 }
